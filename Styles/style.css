@@ -101,7 +101,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  background-blend-mode: multiply;
 }
 
 .container {
@@ -118,10 +117,10 @@ body {
   text-align: center;
 }
 .content-top .header {
-  margin-bottom: 1em;
+  margin-bottom: 0.7em;
 }
 .content-top .description {
-  margin-bottom: 3em;
+  margin-bottom: 2em;
 }
 
 .subscription {
@@ -137,9 +136,10 @@ body {
 }
 
 .form-container {
+  position: relative;
   background-color: white;
   color: black;
-  padding: 1em;
+  padding: 1.2em;
   border-radius: 0.5em;
   box-shadow: 0em 0.4em rgba(0, 0, 0, 0.22);
 }
@@ -151,7 +151,7 @@ body {
   text-transform: uppercase;
   border: none;
   border-radius: 0.3em;
-  padding: 0.6em;
+  padding: 0.8em;
   margin-bottom: 0.8em;
   color: white;
   background-color: hsl(154, 59%, 51%);
@@ -159,7 +159,7 @@ body {
 }
 .form-container .terms-services {
   font-size: 0.75rem;
-  opacity: 0.7;
+  opacity: 0.5;
   text-align: center;
   padding: 0 1.6em 0 1.6em;
 }
@@ -171,4 +171,37 @@ body {
 .form-container .terms-button .terms-span {
   color: orangered;
   font-weight: 700;
+}
+
+.signup-field {
+  border: none;
+  padding: 0;
+}
+.signup-field .signup-legend {
+  clip: rect(0, 0, 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
+.signup-field .visual-hidden {
+  clip: rect(0, 0, 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
+.signup-field .signup-input {
+  display: block;
+  width: 100%;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 0.1em solid hsla(0, 0%, 75%, 0.7);
+  border-radius: 0.25em;
+  padding: 1em;
+  margin-bottom: 0.8em;
 }/*# sourceMappingURL=style.css.map */

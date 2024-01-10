@@ -50,25 +50,28 @@
 
       <div class="form-container">
         <form id="form" action="">
-          <div class="input-wrapper">
-            <input type="text" id="firstname" name="signup-contact">
-            <label for="firstname"> First Name</label>
-          </div>
+          <fieldset class="signup-field">
+            <legend class="signup-legend">Sign up form</legend>
+            <div class="input-wrapper">
+              <input type="text" id="firstname" name="signup-contact" placeholder="First Name" class="signup-input">
+              <label for="firstname" class="visual-hidden"> First Name</label>
+            </div>
 
-          <div class="input-wrapper">
-            <input type="text" id="lastname" name="signup-contact">
-            <label for="lastname"> Last Name</label>
-          </div>
+            <div class="input-wrapper">
+              <input type="text" id="lastname" name="signup-contact" placeholder="Last Name" class="signup-input">
+              <label for="lastname" class="visual-hidden"> Last Name</label>
+            </div>
 
-          <div class="input-wrapper">
-            <input type="email" id="email" name="signup-contact">
-            <label for="email"> Email Address</label>
-          </div>
+            <div class="input-wrapper">
+              <input type="email" id="email" name="signup-contact" placeholder="Email Address" class="signup-input">
+              <label for="email" class="visual-hidden"> Email Address</label>
+            </div>
 
-          <div class="input-wrapper">
-            <input type="password" id="password" name="signup-contact">
-            <label for="password"> Password</label>
-          </div>
+            <div class="input-wrapper">
+              <input type="password" id="password" name="signup-contact" placeholder="Password" class="signup-input">
+              <label for="password" class="visual-hidden"> Password</label>
+            </div>
+          </fieldset>
 
           <button type="submit" class="claim-button"> Claim your free trial</button>
 
