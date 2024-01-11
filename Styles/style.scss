@@ -1,8 +1,9 @@
 //Variables
 $body-bg-color: hsl(0, 100%, 74%);
 $button-bg-color: hsl(154, 59%, 51%);
+$button-active-color: hsl(154, 60%, 68%);
 $subscription-bg-color: hsl(248, 32%, 49%);
-$red-error-color: hsl(0, 62%, 49%);
+$red-error-color: hsl(0, 100%, 74%);
 $darkblue: hsl(249, 10%, 26%);
 $grayishblue: hsl(246, 25%, 77%);
 
@@ -29,14 +30,13 @@ body {
     background-size: contain;
 }
 
-.container {
+.main-container {
     max-width: 21rem;
     @include Flex(column);
     flex: 1;
-
 }
 
-.content-top {
+.content {
     padding: 0.6em;
     text-align: center;
 
@@ -50,12 +50,14 @@ body {
 }
 
 .subscription {
+    text-wrap: balance;
     padding: 1em;
     margin-bottom: 1.2em;
-    border-radius: 0.5em;
-    box-shadow: 0em 0.4em rgba(0, 0, 0, 0.22);
+    border-radius: 8px;
+    box-shadow: 0 6px rgba(0, 0, 0, 0.22);
     text-align: center;
     background-color: $subscription-bg-color;
+    z-index: 10;
 
     span {
         font-weight: 700;
@@ -68,75 +70,142 @@ body {
     background-color: white;
     color: black;
     padding: 1.2em;
-    border-radius: 0.5em;
-    box-shadow: 0em 0.4em rgba(0, 0, 0, 0.22);
+    border-radius: 8px;
+    box-shadow: 0 6px rgba(0, 0, 0, 0.22);
+}
 
-    .claim-button {
-        display: block;
-        width: 100%;
-        cursor: pointer;
-        text-align: center;
-        text-transform: uppercase;
-        border: none;
-        border-radius: 0.3em;
-        padding: 0.8em;
-        margin-bottom: 0.8em;
-        color: white;
-        background-color: $button-bg-color;
-        box-shadow: 0em 0.2em hsl(154, 57%, 42%);
-    }
 
-    .terms-services {
-        font-size: 0.75rem;
-        opacity: 0.5;
-        text-align: center;
-        padding: 0 1.6em 0 1.6em;
-    }
+.claim-button {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 0.3em;
+    padding: 0.8em;
+    margin-bottom: 0.8em;
+    color: white;
+    background-color: $button-bg-color;
+    box-shadow: 0 3px hsl(154, 57%, 42%);
+    transition: background-color 150ms ease-in;
+}
 
-    .terms-button {
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
+//Terms Conditions Styling
+.terms-services {
+    font-size: 0.75rem;
+    color: hsla(0, 0%, 0%, 0.3);
+    text-align: center;
+    padding: 0 1.6em 0 1.6em;
+    font-weight: 600;
+}
 
-        .terms-span {
-            color: orangered;
-            font-weight: 700;
-        }
-    }
+.terms-anchor {
+    color: hsl(0, 100%, 74%);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+//Input and Label Styling 
+.visual-hidden {
+    clip: rect(0, 0, 0);
+    clip-path: inset(50%);
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+}
+
+.signup-input {
+    position: relative;
+    display: block;
+    width: 100%;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: 1px solid hsla(0, 0%, 75%, 0.7);
+    border-radius: 4px;
+    padding: 1em;
+    margin-bottom: 0.8em;
+    transition: border 100ms linear;
+
+    //Error Icon
+    background-image: url(../images/icon-error.svg);
+    background-repeat: no-repeat;
+    background-position: right 5% center;
+    background-size: 20px;
 
 }
 
-.signup-field {
-    border: none;
-    padding: 0;
+//Dynamic error message display with JS
+.error-msg {
+    display: block;
+    text-align: right;
+    width: 100%;
+    margin-bottom: 0.6em;
+    position: relative;
+    bottom: 6px;
+    font-style: italic;
 
-    .signup-legend {
-        clip: rect(0, 0, 0);
-        clip-path: inset(50%);
-        overflow: hidden;
-        position: absolute;
-        width: 1px;
-        height: 1px;
+    color: $red-error-color;
+    font-size: 0.6rem;
+
+}
+
+//Active States
+.claim-button:hover {
+    background-color: $button-active-color;
+}
+
+.claim-button:active {
+    background-color: $button-bg-color;
+}
+
+//Input States
+.signup-input:hover {
+    border-color: slategray;
+}
+
+
+@mixin Grid() {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+}
+
+@media (min-width: 50rem) {
+
+    body {
+        // Background for Desktop
+        background-image: url(../images/bg-intro-desktop.png);
     }
 
-    .visual-hidden {
-        clip: rect(0, 0, 0);
-        clip-path: inset(50%);
-        overflow: hidden;
-        position: absolute;
-        width: 1px;
-        height: 1px;
+
+    .main-container {
+        @include Grid();
+        max-width: 62rem
     }
 
-    .signup-input {
-        display: block;
-        width: 100%;
-        font-size: 0.875rem;
-        font-weight: 600;
-        border: 0.1em solid hsla(0, 0%, 75%, 0.7);
-        border-radius: 0.25em;
-        padding: 1em;
-        margin-bottom: 0.8em;
+    .content {
+        grid-area: 1/1/3/2;
+        text-align: start;
+
+        .description {
+            margin-bottom: 0;
+            font-size: 0.875rem;
+        }
+    }
+
+    .subscription {
+        grid-area: 1/2/2/3;
+        padding: 0.8em;
+        margin-bottom: 0;
+    }
+
+    .form-container {
+        grid-area: 1/2/3/2;
+        padding: 1.5em;
+
     }
 
 }
