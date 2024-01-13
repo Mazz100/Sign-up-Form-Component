@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Intro component with sign up form</title>
 
+
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution {
@@ -44,32 +45,32 @@
       </p>
     </div>
 
+    <div id="claimed-text"></div>
+
     <div class="form-container">
       <form id="form" action="">
-        <div></div> <!--Success msg after submit-->
-
         <div class="input-wrapper">
           <input type="text" id="firstname" name="signup-contact" placeholder="  First Name" class="signup-input">
           <label for="firstname" class="visual-hidden"> First Name</label>
-          <span class="error-msg"></span>
+          <span id="firstname-error" class="error-msg"></span>
         </div>
 
         <div class="input-wrapper">
           <input type="text" id="lastname" name="signup-contact" placeholder="  Last Name" class="signup-input">
-          <span class="error-msg"></span>
           <label for="lastname" class="visual-hidden"> Last Name</label>
+          <span id="lastname-error" class="error-msg"></span>
         </div>
 
         <div class="input-wrapper">
           <input type="email" id="email" name="signup-contact" placeholder="  Email Address" class="signup-input">
-          <span class="error-msg"></span>
           <label for="email" class="visual-hidden"> Email Address</label>
+          <span id="email-error" class="error-msg"></span>
         </div>
 
         <div class="input-wrapper">
           <input type="password" id="password" name="signup-contact" placeholder="  Password" class="signup-input">
-          <span class="error-msg"></span>
           <label for="password" class="visual-hidden"> Password</label>
+          <span id="password-error" class="error-msg"></span>
         </div>
 
         <button type="submit" class="claim-button"> Claim your free trial</button>
@@ -89,6 +90,8 @@
       Coded by <a href="#">Your Name Here</a>.
     </p>
   </footer>
+
+  <script src="jscode.js"></script>
 </body>
 
 </html>

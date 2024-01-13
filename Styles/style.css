@@ -162,6 +162,17 @@ body {
   transition: background-color 150ms ease-in;
 }
 
+.claimed-trial {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  background-color: hsl(137, 66%, 59%);
+  padding: 1em;
+  margin-bottom: 0.5em;
+  border-radius: 8px;
+}
+
 .terms-services {
   font-size: 0.75rem;
   color: hsla(0, 0%, 0%, 0.3);
@@ -197,6 +208,9 @@ body {
   padding: 1em;
   margin-bottom: 0.8em;
   transition: border 100ms linear;
+}
+
+.error-icon {
   background-image: url(../images/icon-error.svg);
   background-repeat: no-repeat;
   background-position: right 5% center;
