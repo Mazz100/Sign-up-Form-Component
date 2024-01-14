@@ -15,7 +15,7 @@ const passwordError = document.querySelector('#password-error');
 const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;;
 
 // Email regex vaidation
-function EmailValidate(){
+function EmailValidate() {
     if (emailAddress.value.trim() == '' || !emailRegex.test(emailAddress.value)) {
         emailAddress.style.borderColor = 'hsl(0, 100%, 74%)';
         emailError.innerHTML = 'Looks like this is not an email';
@@ -25,7 +25,6 @@ function EmailValidate(){
 
 sign_form.addEventListener("submit", submission => {
     submission.preventDefault();
-
 
     //Validate Test
     EmailValidate();
