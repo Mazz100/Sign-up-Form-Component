@@ -4,6 +4,7 @@ const lastName = document.querySelector('#lastname');
 const emailAddress = document.querySelector('#email');
 const password = document.querySelector('#password');
 const claimedText = document.querySelector('#claimed-text');
+
 //Error messages
 const firstnameError = document.querySelector('#firstname-error');
 const lastnameError = document.querySelector('#lastname-error');
