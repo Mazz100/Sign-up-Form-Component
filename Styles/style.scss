@@ -39,6 +39,7 @@ body {
 .content {
     padding: 0.6em;
     text-align: center;
+    grid-area: 1/2/2/3;
 
     .header {
         margin-bottom: 0.7em;
@@ -160,13 +161,12 @@ body {
     width: 100%;
     text-align: center;
     font-weight: 700;
+    color: white;
     background-color: hsl(137, 66%, 59%);
     padding: 1em;
     margin-bottom: 0.5em;
     border-radius: 8px;
-
 }
-
 
 //Footer 
 .attribution {
@@ -174,8 +174,8 @@ body {
     width: 100%;
     font-size: 0.75rem;
     text-align: center;
-    text-wrap: balance;
     color: black;
+    padding: 0.6em;
 }
 
 .attribution a {
@@ -197,10 +197,10 @@ body {
 }
 
 
-@mixin Grid() {
+@mixin Grid($columns, $rows) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat($columns, 1fr);
+    grid-template-rows: repeat($rows, 1fr);
     place-content: center;
 
 }
@@ -215,14 +215,19 @@ body {
 
 
     .main-container {
-        @include Grid();
+        @include Grid(2, 1);
         max-width: 64rem;
-        flex: 0;
+
+    }
+
+    .rightside-Grid {
+        // Another grid display for a parent group of subscription and form
+        @include Grid(1, 1)
     }
 
     .content {
-        grid-area: 2/1/4/2;
         text-align: start;
+        grid-area: 1/1/2/2;
 
         .header {
             font-size: 2.7rem;
@@ -235,13 +240,12 @@ body {
     }
 
     .subscription {
-        grid-area: 1/2/3/3;
+        grid-area: 1/1/2/3;
         padding: 0.8em;
-        margin-bottom: 5em;
     }
 
     .form-container {
-        grid-area: 2/2/4/2;
+        grid-area: 2/1/2/3;
         padding: 1.5em;
 
     }
